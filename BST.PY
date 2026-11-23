@@ -33,7 +33,7 @@ class BST:
         else:
             self.inorder(rt.left)
             print(rt.data, end=" ")
-            if rt.left is None and rt.right is None:
+            if rt.left is not None or rt.right is not None:
                 self.cnt+=1
             self.inorder(rt.right)
     def preorder(self, rt):
@@ -74,7 +74,9 @@ print("\nInorder: ")
 b1.inorder(b1.root)
 print("\nNo of nodes: ",b1.cnt)
 print("\nLeaf nodes:",b1.cnt)
+print("\nNon-Leaf nodes:",b1.cnt)
 print("\nPreorder: ")
 b1.preorder(b1.root)
 print("\nPostorder: ")
 b1.postorder(b1.root)
+b1.findminmax()
